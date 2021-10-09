@@ -2,9 +2,10 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import './all.sass'
+import './all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import fbImg from '../img/legacy/fb.jpg';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -49,7 +50,31 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      
+      <div class="content">
+
+        <div class="content_resize">
+          <div class="mainbar">
+            {children}
+          </div>
+
+          <div class="sidebar">
+            <div class="gadget">
+              <h2 class="star">其他連結</h2>
+              <ul class="sb_menu">
+                {/* <!--<li><a href="http://www.proarchery.com.hk/index.php" target="_blank">Pro Archery Online Shop</a></li>--> */}
+                <li><a href="http://www.proarchery.org.hk/" target="_blank">博雅箭會 ProArchery Club</a></li>
+                <li>
+                  <a href="http://www.facebook.com/proarcheryhk" target="_blank">
+                    <img src={fbImg} height="40"/>
+                  </a>
+                </li>
+              </ul>
+              <div class="clr"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   )

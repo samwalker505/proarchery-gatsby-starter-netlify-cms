@@ -1,113 +1,58 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
+      <>
+        <div id="bottom">
+          <div class="fbg">
+            <div class="fbg_resize">
+              <div class="col c1">
+                <h2>中心開放時間︰</h2>
+                <p>
+                  星期一至四：下午七時至十一時<br />
+                  星期五　　：下午六時至十一時<br />
+                  星期六、日：上午十時至下午十時<br />
+                  晚上九時半後請由１期的停車場出入口進出
+                </p>
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
+
+              <div class="col c2">
+                <h2>聯絡我們：</h2>
+                <p>
+                  <strong>電話：</strong> 2796 9177<br />
+                  <strong>傳真：</strong> 2395 4078<br />
+                  <strong>地址︰</strong>
+                  官塘工業中心３期４樓Ｊ室（觀塘港鐵站Ｄ４出口）<br />
+                  <strong>Address:</strong> Flat J, 4/F, Block 3, Kwun Tong
+                  Industrial Centre, 448 - 458 Kwun Tong Road (near D4 exit of
+                  Kwun Tong MTR station).<br />
+                  <strong>電郵：</strong>
+                  <a href="mailto:inquiry@proarchery.com.hk"
+                    >inquiry@proarchery.com.hk</a
+                  >
+                </p>
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+
+              <div class="col c3">
+                <p></p>
+                {/* <!--<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="250" height="250" src="https://maps.google.com.hk/maps?hl=en&q=kwun tong industrial centre phase 3&ie=UTF8&t=roadmap&z=17&iwloc=B&output=embed"></iframe>
+        --> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3691.1247845488374!2d114.227508!3d22.31112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5d3f850025bb9f81!2sHong%20Kong%20Archery%20Services%20Company%20Limited%20(Pro%20Archery%20by%20HKAS)!5e0!3m2!1sen!2sus!4v1633772475092!5m2!1sen!2sus" width="250" height="250" style={{ border:0,}} allowfullscreen="" loading="lazy"></iframe>
+
+                <p></p>
               </div>
+
+              <div class="clr"></div>
             </div>
           </div>
         </div>
-      </footer>
+
+        <div class="footer">
+        <div class="footer_resize"></div>
+      </div>
+      </>
     )
   }
 }

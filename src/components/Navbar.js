@@ -1,7 +1,10 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import github from '../img/github-icon.svg';
+import logo from '../img/legacy/logo.jpeg';
+import menuActive from '../img/legacy/menu_a.jpeg';
+
+
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -34,66 +37,35 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              role="menuitem"
-              tabIndex={0}
-              onKeyPress={() => this.toggleHamburger()}
-              onClick={() => this.toggleHamburger()}
+      <>
+        <div class="header">
+          <div class="header_resize">
+            <div 
+              class="logo"
             >
-              <span />
-              <span />
-              <span />
+              <h1><a href="http://www.proarchery.com.hk/index.html">香港射箭服務中心</a></h1>
             </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
+            <div class="menu_nav">
+              <ul>
+                <li><a href="http://www.proarchery.com.hk/index.html">首頁</a></li>
+                <li><a href="http://www.proarchery.com.hk/centre.html">中心資料</a></li>
+                <li><a href="http://www.proarchery.com.hk/course.html">射箭課程</a></li>
+                <li><a href="http://www.proarchery.com.hk/summer2021.html"><font color="yellow">2021暑期課程</font></a></li>
+                {/* <!--<li><a href="mind_course.html">靜觀射箭小組</a></li>-->
+                <!--<li><a href="mind_workshop.html">靜觀體驗工作坊</a></li>--> */}
+                <li><a href="http://www.proarchery.com.hk/experience.html">我們的經驗</a></li>
+                {/* <!--<li><a href="blog.html">教練手記</a></li>--> */}
+                <li><a href="http://www.proarchery.com.hk/charge_and_regulation.html">射箭場收費及租用守則</a></li>
+                <li><a href="http://www.proarchery.com.hk/carpark.html">停車場收費</a></li>
+                <li><a href="http://www.proarchery.com.hk/contactus.html">聯絡我們</a></li>
+                {/* <!--<li class="active"><a href="index.php"><font color=yellow>Pro Archery Online Shop</font></a></li>--> */}
+                <li><a href="http://www.proarchery.org.hk/" target="_blank"><font color="yellow">博雅箭會</font></a></li>
+              </ul>
             </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
+            <div class="clr"></div>
           </div>
         </div>
-      </nav>
+      </>
     )
   }
 }
