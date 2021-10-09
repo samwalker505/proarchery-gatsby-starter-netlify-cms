@@ -3,7 +3,7 @@ templateKey: index-page
 title: jfiosjhoi
 image: /img/index1.jpg
 heading: djlk
-subheading: jsfal
+body: hi
 mainpitch:
   title: kjnknk
   description: jpojoin

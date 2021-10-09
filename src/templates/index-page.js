@@ -5,37 +5,39 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
-  body
-}) => (
-  <div>
-    { body }
-  </div>
-)
+  html,
+  contentComponent
+}) => {
+  const PageContent = contentComponent || Content
+  return  (
+    <div>
+      <PageContent content={html} />
+    </div>
+  )
+}
 
 IndexPageTemplate.propTypes = {
   body: PropTypes.string,
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { markdownRemark  } = data
 
   return (
     <Layout>
       <IndexPageTemplate
-        body={frontmatter.body}
+        contentComponent={ HTMLContent }
+        html={markdownRemark.html}
       />
     </Layout>
   )
 }
 
 IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+  data: PropTypes.object.isRequired,
 }
 
 export default IndexPage
@@ -43,9 +45,7 @@ export default IndexPage
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        body
-      }
+      html
     }
   }
 `
